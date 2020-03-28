@@ -1,16 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "assets/scss/bootstrap.scss";
+import "assets/main.css";
 
 //Routes
 import Routes from "routes";
 
-//MainLayout
-import MainLayout from "components/MainLayout";
-
-ReactDOM.render(
-  <MainLayout>
-    <Routes />
-  </MainLayout>,
-  document.getElementById("root")
-);
+ReactDOM.render(<Routes />, document.getElementById("root"));
