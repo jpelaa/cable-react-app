@@ -1,9 +1,22 @@
 import React from "react";
+import PlusIcon from "assets/svg/icons/svg/icon-plus.svg";
+import routes from "static/routes";
 
-const Packages = () => {
+const Packages = ({ navigate }) => {
   return (
     <div class="flex flex-col">
       <div class="-my-2 py-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
+        <div class="bg-white px-4 py-3 flex items-center justify-between border-t border-gray-200 sm:px-6">
+          <div class="flex-1 flex justify-end">
+            <a
+              onClick={() => navigate(routes.create)}
+              class="relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm leading-5 font-medium rounded-md text-gray-700 bg-white hover:text-gray-500 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150"
+            >
+              <img src={PlusIcon} alt="add icon" />
+              new
+            </a>
+          </div>
+        </div>
         <div class="align-middle inline-block min-w-full shadow overflow-hidden sm:rounded-lg border-b border-gray-200">
           <table class="min-w-full">
             <thead>

@@ -4,7 +4,7 @@ import Logo from "assets/images/logo.png";
 import navbar from "static/navbar";
 import routes from "static/routes";
 
-const Dashboard = ({ children, navigate }) => {
+const Dashboard = ({ children, navigate, location }) => {
   return (
     <div>
       <nav x-data="{ open: false }" class="bg-gray-800">
@@ -210,10 +210,20 @@ const Dashboard = ({ children, navigate }) => {
         </div>
       </nav>
       <header class="bg-white shadow">
-        <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-          <h1 class="text-3xl font-bold leading-tight text-gray-900">
-            {navbar.home}
-          </h1>
+        <div class="flex max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+          {location.pathname
+            .slice(1)
+            .split("/")
+            .map((data, index) => (
+              <h1
+                class={`text-3xl font-bold leading-tight capitalize   ${
+                  index === 0 ? "text-purple-900" : "text-gray-900"
+                }`}
+              >
+                {index !== 0 && "  >  "}
+                {data}{" "}
+              </h1>
+            ))}
         </div>
       </header>
       <main>
