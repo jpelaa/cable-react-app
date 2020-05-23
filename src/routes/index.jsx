@@ -8,6 +8,7 @@ const Packages = lazy(() => import("layouts/Packages"));
 const Customers = lazy(() => import("layouts/Customers"));
 const Package = lazy(() => import("layouts/Package"));
 const CreatePackage = lazy(() => import("layouts/CreatePackage"));
+const CreateCustomer = lazy(() => import("layouts/CreateCustomer"));
 
 const Routes = () => {
   return (
@@ -17,7 +18,8 @@ const Routes = () => {
           <Packages path={routes.packages} />
           <Package path={`${routes.packages}/:packageId`} />
           <CreatePackage path={`${routes.packages}/${routes.create}`} />
-          <Customers path={routes.customers} />
+          <Customers path={`${routes.customers}/:page`} />
+          <CreateCustomer path={`${routes.customers}/${routes.create}`} />
         </Dashboard>
         <Login path={routes.login} />
       </Router>
